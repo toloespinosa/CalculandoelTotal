@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío 1 - JavaScript</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="card">
+            <div class="img-card"></div>
+              <h6>Laptop Gamer AMD</h6>
+              <p>Precio base: $<span class="precio-inicial"></span> </p>
+        
+              <p>Cantidad:
+                <span class="cantidad">0</span>
+                <button onclick="
+                    let spanContar = document.querySelector('.cantidad');
+                    let contador = Number(spanContar.textContent);
+                    spanContar.innerHTML = contador + 1;
+                    let precioInicial = Number(document.querySelector('.precio-inicial').textContent);
+                    let cantidad = Number(spanContar.textContent);
+                    let total = precioInicial * cantidad;
+                    document.querySelector('.valor-total').textContent = total;
+                ">+</button>
+
+                <button onclick="
+                    let spanDescontador = document.querySelector('.cantidad');
+                    let descontar = Number(spanDescontador.textContent);
+                    if (descontar > 0) spanDescontador.innerHTML = descontar - 1;
+                    let precioInicial = Number(document.querySelector('.precio-inicial').textContent);
+                    let cantidad = Number(spanDescontador.textContent);
+                    let total = precioInicial * cantidad;
+                    document.querySelector('.valor-total').textContent = total;
+                ">-</button>
+              </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="total-section">
+        <p>Total a pagar: $<span class="valor-total"></span> </p>
+        
+
+    </div>
+
+    <script src="index.js">
+      
+
+    </script>
+</body>
+</html>
